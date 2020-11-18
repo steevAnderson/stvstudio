@@ -26,9 +26,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'zioka8zz5)m3l**&v1&d12&l69!leh61*vrc(jr6ye2@3=3un-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['185.253.152.65','stvstudio.me']
 
 
 # Application definition
@@ -92,8 +92,8 @@ DATABASES = {
     'default':{
         'ENGINE': 'django.db.backends.mysql',
         'NAME' : 'stvstudio',
-        'USER' : 'root',
-        'PASSWORD' : '',
+        'USER' : 'andy',
+        'PASSWORD' : 'R_T@_1w77',
         'HOST' : 'localhost',
         'PORT' : 3306
 
