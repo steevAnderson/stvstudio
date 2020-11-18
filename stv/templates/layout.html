@@ -1,0 +1,154 @@
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>
+
+        {% block titulo %}
+        
+        {% endblock titulo %}
+        | StvStudio
+        </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+    </head>
+    <body>
+       
+
+
+       <header>
+
+        <span class="logo"> <a href="{% url 'home' %}">Stv <span class="tomato">Studio</span></a> </span>
+
+            <nav class="none">
+                <ul>
+                    <li class="barra_style"><a class="insert_menu" href="{% url 'me' %}">Me.</a></li>
+                    <li><a class="insert_menu" href="#portfolio">Porftolio</a></li>
+                    <li><a class="insert_menu" href="{% url 'contactar' %}">Contactar</a></li>
+                    
+                </ul>
+            </nav>
+
+      
+<nav role="navigation" class="nav_s">
+  <div id="menuToggle">
+
+    <input type="checkbox" />
+    
+
+    <span></span>
+    <span></span>
+    <span></span>
+    
+
+    <ul id="menu">
+
+     <li class="resp"><a  href="{% url 'me' %}">Me.</a></li>
+     <li class="resp"><a  href="#portfolio">Porftolio</a></li>
+     <li class="ult_resp"><a href="{% url 'contactar' %}">Contactar</a></li>
+                    
+    <div class="redes">
+        <a target="_blank" href="https://twitter.com/anderson_steev"><img src="{% static 'img_static/twitter.png' %}"/></a>
+        <a target="_blank" href="https://www.instagram.com/steev_anderson/"><img src="{% static 'img_static/instagram.png' %}"/></a>
+        <a target="_blank" href="https://www.linkedin.com/in/steev-anderson-canales-cuchipe-b85349186/"><img src="{% static 'img_static/linke.png' %}"/></a>
+    </div>
+
+    <li>{ -- Proyectos -- }</li>
+
+   
+
+        {% for proyecto in proyectos %}
+
+             <hr class="menu_hr_deple">
+           <div class="img_proyect">
+    
+          {% if proyecto.image != 'null' and proyecto.image.url|length >= 1 %}
+           <img src="{{ proyecto.image.url }}" />
+          {% endif %}
+
+           <a target="_blank" href="{{ proyecto.web }}">{{proyecto.title}}</a>
+
+          
+           </div>
+       
+        {% empty %}
+
+            <li>No hay proyectos disponibles </li>
+        {% endfor %}
+          
+     
+
+    
+     
+      
+      
+    </ul>
+  </div>
+</nav>
+
+        
+       </header>
+        
+
+    <div id="content">
+
+
+        {% block content %}
+
+
+        {% endblock content %}
+
+    </div>
+
+    
+
+    
+<section id="portfolio" class="home_3_content">
+
+<h2>Algunos de mis <span class="tomato">clientes</span></h2>
+{% load static %}
+
+<article>
+
+{% for cliente in clientss %}
+
+
+<div>
+    
+    {% if cliente.image != 'null' and cliente.image.url|length >= 1 %}
+        <img src="{{ cliente.image.url }}" />
+    {% endif %}
+
+    <span><a target="_blank" href="{{ cliente.web }}">{{cliente.title}}</a></span>
+</div>
+
+{% empty %}
+
+<span>No disponible</span>
+
+{% endfor %}
+
+
+
+
+</article>
+
+</section>
+
+
+
+    <footer>
+        <span>Stv Studio</span>
+    </footer>
+
+{% load static %}
+        <script src="{% static 'js/burguer.js' %}"></script>
+        <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+
+    </body>
+
+</html>

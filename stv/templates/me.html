@@ -1,0 +1,65 @@
+{% extends 'layout.html' %}
+
+{% block titulo %}
+Steev Anderson
+{% endblock titulo %}
+
+{% block content %}
+
+<section class="me_1_containt">
+<article class="h1_1_div_me">
+
+{% load static %}
+<img  src="{% static 'img_static/perfil.jpg' %}"/>
+
+<h1>
+Steev Anderson
+</h1>
+
+<p>
+
+Soy un apersona sociable,capaz de escuchar y de disfrutar del contacto profesional con clientes,
+ proveedroes y colaboradores. He ido trabajando en distintos lugares
+ y sectores, formandome por cuenta propia
+ en entonos de mi agrado.
+
+</p>
+
+<ul>
+<span>
+Competencias personales.
+</span>
+<hr>
+<li>trabajo en equipo.</li>
+<li>Escucha activa.</li>
+<li>Asertividad</li>
+<li>Participacion.</li>
+<li>Responsabilidad.</li>
+</ul>
+
+
+<ul>
+<span>
+Conocimientos.
+</span>
+<hr>
+
+
+
+{% for cono in conocimiento %}
+    <li>{{ cono.nombre }}</li>
+
+{% empty %}
+
+    <span>No disponible</span>
+{% endfor %}
+
+</ul>
+
+</article>
+
+
+
+</section>
+
+{% endblock content %}
