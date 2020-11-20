@@ -28,7 +28,7 @@ SECRET_KEY = 'zioka8zz5)m3l**&v1&d12&l69!leh61*vrc(jr6ye2@3=3un-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['165.232.42.116','stvstudio.me']
+ALLOWED_HOSTS = ["stvstudio.me"]
 
 
 # Application definition
